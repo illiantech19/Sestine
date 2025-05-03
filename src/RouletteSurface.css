@@ -1,0 +1,76 @@
+/* Roulette Surface */
+.roulette-surface {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 6px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Numeri della roulette */
+.roulette-number {
+  width: 15vw;
+  max-width: 50px;
+  min-width: 35px;
+  height: 15vw;
+  max-height: 50px;
+  min-height: 35px;
+  font-size: clamp(0.9em, 3vw, 1.2em);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+/* Colori */
+.roulette-number.red {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.roulette-number.black {
+  background-color: #2c3e50;
+  color: white;
+}
+
+.roulette-number.green {
+  background-color: #27ae60;
+  color: white;
+}
+
+/* Gestione dello zero */
+.zero {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+  align-self: center;
+  background-color: #f39c12;
+  color: white;
+  font-size: clamp(0.9em, 3vw, 1.2em);
+}
+
+/* Sestine Table */
+.sestine-table {
+  max-width: 100%;
+}
+
+.sestine-table th,
+.sestine-table td {
+  padding: 12px;
+  font-size: 1em;
+}
+
+/* Media Query opzionale per aumentare font su schermi medi */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .sestine-table th,
+  .sestine-table td {
+    font-size: 1.1em;
+    padding: 14px;
+  }
+}

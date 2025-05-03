@@ -1,38 +1,65 @@
-.App {
+/* App.css */
+.container {
   text-align: center;
+  max-width: 100%;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1, h4 {
+  font-weight: bold;
+  color: #2c3e50;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#deleteButton {
+  margin: auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.click-history {
+  height: 1000px; /* 25 numeri x (30px altezza + 6px gap) ≈ 900px */
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #f9f9f9;
+  padding: 10px;
+}
+.click-history li {
+  font-size: 1.1em;
+}
+
+.btn {
+  margin-left: 0;
+}
+
+
+.extracted-numbers-grid {
   display: flex;
   flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+
+.extracted-number {
+  width: 30px;
+  height: 30px;
+  font-size: 0.9em;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  border-radius: 6px;
+  font-weight: bold;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+.extracted-number.red {
+  background-color: #e74c3c;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.extracted-number.black {
+  background-color: #2c3e50;
+}
+
+.extracted-number.green {
+  background-color: #27ae60;
 }
