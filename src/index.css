@@ -1,6 +1,6 @@
 /* index.css */
 body {
-  margin: 0; 
-  font-family: 'Segoe UI', 'Roboto', sans-serif;
-  background-color: #f4f4f4;
+  background-color: #35654d;
+  color: white; /* Imposta il colore del testo per garantire leggibilità */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

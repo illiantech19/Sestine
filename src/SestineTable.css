@@ -1,40 +1,54 @@
-/* Sestine.css */
+/* Tabelle comuni */
+.sestine-table,
+.terzine-table {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  table-layout: fixed;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  max-width: 1100px;
+  border-collapse: collapse;
+}
+
 .sestine-table {
   margin: 20px auto;
-  border-collapse: collapse;
-  width: 100%;
-  max-width: 600px;
-  background-color: white;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Aumentato il blur per un'ombra più morbida */
-  border-radius: 8px; /* Aggiunta una leggera curvatura agli angoli */
-  overflow: hidden; /* Per evitare che bordi arrotondati siano coperti */
 }
 
 .sestine-table th,
-.sestine-table td {
-  border: 1px solid #ddd; /* Sostituito con un colore più soft per un aspetto più delicato */
-  padding: 16px; /* Maggiore spazio per migliorare la leggibilità */
+.sestine-table td,
+.terzine-table th,
+.terzine-table td {
+  border: 1px solid #ddd;
   text-align: center;
-  font-size: 1.1em; /* Font leggermente più grande per facilitare la lettura */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Aggiunto effetto di trasformazione */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #555;
+  font-size: 1em;
+  padding: 12px 14px;
+  transition: background-color 0.2s ease;
 }
 
-.sestine-table th {
-  background-color: #f4f4f4; /* Colore di sfondo più delicato per l'intestazione */
-  color: #333; /* Testo più scuro per maggiore contrasto */
-  font-weight: 600; /* Più visibile */
+.terzine-table th,
+.terzine-table td {
+  padding: 6px 8px;
 }
 
-.sestine-table td {
-  color: #555; /* Colore del testo più morbido */
+.sestine-table th,
+.terzine-table th {
+  background-color: #f4f4f4;
+  color: #333;
+  font-weight: 600;
 }
 
 .sestine-table th:hover,
-.sestine-table td:hover {
-  background-color: #f0f0f0; /* Effetto hover per migliorare l'interazione */
-  transform: scale(1.03); /* Effetto di ingrandimento leggero per un feedback visivo */
+.sestine-table td:hover,
+.terzine-table th:hover,
+.terzine-table td:hover {
+  background-color: #f0f0f0;
 }
 
+/* Colori personalizzati */
 .green {
   background-color: #2ecc71;
   color: white;
@@ -50,28 +64,46 @@
   color: white;
 }
 
-@media (max-width: 600px) {
-  .sestine-table {
-    max-width: 100%; /* Rimuove il limite di larghezza per dispositivi molto stretti */
+/* Riga di intestazione grigia */
+.header-row-gray {
+  background-color: #d3d3d3;
+  color: #333;
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .sestine-table,
+  .terzine-table {
+    font-size: 0.75em;
   }
 
   .sestine-table th,
   .sestine-table td {
-    padding: 12px; /* Leggero aumento del padding per una resa migliore su schermi piccoli */
-    font-size: 1em; /* Font più grande su schermi piccoli per migliorare la leggibilità */
+    padding: 8px 10px;
+    font-size: 0.75em;
+  }
+
+  .terzine-table th,
+  .terzine-table td {
+    padding: 4px 6px;
+    font-size: 0.6em;
+  }
+
+  .sestine-table td:first-child,
+  .sestine-table th:first-child,
+  .terzine-table td:first-child,
+  .terzine-table th:first-child {
+    min-width: 100px;
+    width: 100px;
+    font-weight: 700;
+    font-size: 1em;
+    text-align: left;
+    padding-left: 16px;
   }
 }
-
-@media (max-width: 600px) {
-  .sestine-table {
-    max-width: 90%; /* Più stretta su mobile */
-    font-size: 0.9em;
-  }
-
-  .sestine-table th,
-  .sestine-table td {
-    padding: 10px;
-    font-size: 0.95em;
-  }
+tr.header-row-gray th {
+  background-color: #ffffffa3 !important;
+  color: #141313 !important;
+  font-weight: 1000;
 }
-

@@ -1,56 +1,54 @@
-/* App.css */
-.container {
-  text-align: center;
-  max-width: 100%;
-  overflow: hidden;
-}
-
-h1, h4 {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#deleteButton {
-  margin: auto;
-}
-
 .click-history {
-  height: 1000px; /* 25 numeri x (30px altezza + 6px gap) ≈ 900px */
-  overflow-y: auto;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background: #f9f9f9;
-  padding: 10px;
-}
-.click-history li {
-  font-size: 1.1em;
+  background-color: #f8f9fa; /* sfondo chiaro */
+  border: 2px solid #ccc; /* bordo visibile */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  height: 60%; /* per estendere l'altezza in colonna */
 }
 
-.btn {
-  margin-left: 0;
-}
-
-
-.extracted-numbers-grid {
+.vertical-buttons {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  align-items: center;
+    gap: 100px; /* distanza verticale tra bottoni */
+   margin: 0;
+}
+
+.rotated-button {
+  transform: rotate(90deg);
+  transform-origin: center;
+  white-space: nowrap;
+  width: max-content;
+  padding: 6px 12px;
+  font-size: 14px;
+  display: block;
+ margin: 10px;
+}
+
+.extracted-numbers-grid {
+  display: flex; 
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.extracted-column {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .extracted-number {
-  width: 30px;
-  height: 30px;
-  font-size: 0.9em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 6px;
+  width: 5%;
+  height: 60px;
   font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
+  font-size: 1.2rem;
 }
-
-
 
 .extracted-number.red {
   background-color: #e74c3c;
@@ -62,4 +60,77 @@ h1, h4 {
 
 .extracted-number.green {
   background-color: #27ae60;
+}
+
+@media (min-width: 992px) {
+ .extracted-numbers-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.extracted-column {
+  display: flex;
+  flex-direction: column;
+  margin-right: 5px;
+}
+
+.extracted-number {
+    width: 28px;
+    height: 28px;
+    font-size: 0.7rem;
+    margin: 2px;
+  }
+
+  .click-history {
+    padding: 5px;
+  }
+}
+
+/* Animazione di apparizione */
+@keyframes pop-in {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 991px) {
+
+  .click-history {
+    background-color: #f8f9fa; /* sfondo chiaro */
+    border: 2px solid #ccc; /* bordo visibile */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    height: 100%; /* per estendere l'altezza in colonna */
+    width: 180px;
+  }
+  
+  .extracted-number {
+    width: 12px;
+    height: 12px;
+    font-size: 0.4rem;
+  }
+
+  .extracted-numbers-grid {
+    gap: 10px;
+    height: 100%; /* aumentata per mobile */
+  }
+
+ 
+}
+
+.title-small {
+  font-size: 1.5rem; /* o qualsiasi valore tu voglia */
+}
+
+.subtitle-small {
+  font-size: 1rem;
 }

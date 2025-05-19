@@ -4,64 +4,45 @@ import './RouletteSurface.css';
 const RouletteSurface = ({ onNumberClick }) => {
   const numbers = Array.from({ length: 36 }, (_, i) => i + 1); // Numeri da 0 a 36
 
-  // Mappa dei colori per i numeri
-  const numberColors = {
-    0: 'green',
-    1: 'red',
-    2: 'black',
-    3: 'red',
-    4: 'black',
-    5: 'red',
-    6: 'black',
-    7: 'red',
-    8: 'black',
-    9: 'red',
-    10: 'black',
-    11: 'black',
-    12: 'red',
-    13: 'black',
-    14: 'red',
-    15: 'black',
-    16: 'red',
-    17: 'black',
-    18: 'red',
-    19: 'black',
-    20: 'black',
-    21: 'red',
-    22: 'black',
-    23: 'red',
-    24: 'black',
-    25: 'red',
-    26: 'black',
-    27: 'red',
-    28: 'red',
-    29: 'black',
-    30: 'red',
-    31: 'black',
-    32: 'red',
-    33: 'black',
-    34: 'red',
-    35: 'black',
-    36: 'red'
-  };
+  const redNumbers = [1, 3, 5, 7, 9, 12, 14, 16, 18, 19,21, 23, 25, 27, 30, 32, 34, 36];
+  const blackNumbers = [2, 4, 6, 8, 10, 11, 13, 15, 17,  20, 22, 24, 26, 28, 29, 31, 33, 35];
+  
+  const numberColors = Array.from({ length: 37 }, (_, i) => i).reduce((acc, num) => {
+    if (num === 0) {
+      acc[num] = 'green';
+    } else if (redNumbers.includes(num)) {
+      acc[num] = 'red';
+    } else if (blackNumbers.includes(num)) {
+      acc[num] = 'black';
+    }
+    return acc;
+  }, {});
 
   return (
-    <><div className="roulette-number zero green" onClick={() => onNumberClick(0)} role="button" aria-label="Seleziona numero 0">
-      0
+<div className="roulette-surface">
+  <div className="empty-cell" />
+  <div
+       className="roulette-number green"
+    onClick={() => onNumberClick(0)}
+    role="button"
+    aria-label="Seleziona numero 0"
+  >
+    0
+  </div>
+  <div className="empty-cell" />
+
+  {numbers.map((number) => (
+    <div
+      key={number}
+      className={`roulette-number ${numberColors[number]}`}
+      onClick={() => onNumberClick(number)}
+      role="button"
+      aria-label={`Seleziona numero ${number}`}
+    >
+      {number}
     </div>
-    <div className="roulette-surface">
-        {numbers.map((number) => (
-          <div
-            key={number}
-            className={`roulette-number ${numberColors[number]}`}
-            onClick={() => onNumberClick(number)}
-            role="button"
-            aria-label={`Seleziona numero ${number}`}
-          >
-            {number}
-          </div>
-        ))}
-      </div></>
+  ))}
+</div>
   );
 };
 
