@@ -177,8 +177,8 @@ const App = () => {
       <div className="row">
         <div className="col-6">
           <div className="click-history mt-4">
-    <h2 style={{ fontSize: "1rem" }}>
-  Numeri Estratti{" "} <span className="badge bg-primary" style={{ fontSize: "0.46rem" }}>
+    <h2 style={{ fontSize: "0.8rem" }}>
+  Numeri Estratti{" "} <span className="badge bg-primary" style={{ fontSize: "0.50rem", marginLeft: 10, marginTop:-2}}>
     {totalInsertedCount}
   </span>
 </h2>
@@ -204,7 +204,7 @@ const App = () => {
           </div>
         </div>
      <div className="col-6 d-flex align-items-center">
-     <RouletteSurface onNumberClick={handleNumberClick} />
+     <RouletteSurface onNumberClick={handleNumberClick} style={{ marginTop:-100}}  />
      
      <div className="vertical-buttons"style={{ marginLeft: '-40px' }}> 
         <button className="btn btn-danger rotated-button  " onClick={handleUndoClick}>Cancella Ultimo</button>

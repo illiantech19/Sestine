@@ -119,7 +119,7 @@
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     margin-bottom: 20px;
-    height: 485px; /* per estendere l'altezza in colonna */
+    height: 500px; /* per estendere l'altezza in colonna */
     width: 180px;
   }
   
@@ -129,10 +129,13 @@
     font-size: 0.4rem;
   }
 
-  .extracted-numbers-grid {
-    gap: 10px;
-    height: 100%; /* aumentata per mobile */
-  }
+  @media (max-width: 991px) {
+    .extracted-numbers-grid {
+        gap: 20px;
+        height: 100%;
+        margin-left: 10px;
+    }
+}
 
  
 }
