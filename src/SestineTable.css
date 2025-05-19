@@ -1,8 +1,39 @@
+.sestine-table {
+  width: auto;
+  max-width: 90%;
+  font-size: 1rem;
+  white-space: normal;
+  transform: none;
+  margin: 0 auto;              /* Centra la tabella */
+}
+
+.sestine-table th,
+.sestine-table td {
+  padding: 4px 8px;            /* Più compatta verticalmente */
+}
+
+.table-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 1rem;
+  max-height: 200px;           /* 🔹 Altezza massima verticale */
+  overflow-y: hidden;
+}
+
+.table-responsive {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-height: 200px;           /* 🔹 Più stretta in verticale */
+}
+
+
 @media (max-width: 576px) {
   .sestine-table{
     width: 30% !important;
     max-width: 80%;
-    white-space: nowrap;
+    white-space: nowrap; 
   }
 
   .sestine-table {
@@ -12,13 +43,14 @@
     display: flex;
     justify-content: center;
     padding: 0;        /* rimuovi eventuali padding */
-    margin: 0 auto;    /* centra */
+    margin: 0 auto;    /* centra */ 
   }
 
   .table-responsive {
     max-width: 100%;
     overflow-x: hidden;  
       max-height:100px;
+      overflow-y: hidden;
   }
   .sestine-table th,
   .sestine-table td {
