@@ -15,15 +15,25 @@
    margin: 0;
 }
 
+.vertical-buttons button {
+  min-width: 100px;
+  text-align: center;
+}
+
+.vertical-buttons .btn-danger {
+  margin-left: 2px;
+   /* Sposta il rosso a sinistra */
+}
+
 .rotated-button {
-  transform: rotate(90deg);
-  transform-origin: center;
-  white-space: nowrap;
-  width: max-content;
-  padding: 6px 12px;
-  font-size: 14px;
-  display: block;
- margin: 10px;
+    transform: rotate(90deg);
+    transform-origin: center;
+    white-space: nowrap;
+    width: max-content;
+    padding: 1px 1px;
+    font-size: 14px;
+    display: block;
+    margin: 5px;
 }
 
 .extracted-numbers-grid {
@@ -109,7 +119,7 @@
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     margin-bottom: 20px;
-    height: 100%; /* per estendere l'altezza in colonna */
+    height: 485px; /* per estendere l'altezza in colonna */
     width: 180px;
   }
   

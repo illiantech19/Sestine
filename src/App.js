@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import RouletteSurface from './RouletteSurface';
-import SestineTable from './SestineTable';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import TerzineTable from './TerzineTable';
 import CombinedTable from './CombinedTable';
 
 const sestineRanges = [
@@ -37,8 +35,7 @@ const App = () => {
   const [clickHistory, setClickHistory] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
   const [totalInsertedCount, setTotalInsertedCount] = useState(0);
-  const [groupSize, setGroupSize] = useState(window.innerWidth < 768 ? 25 : 10);
-  const [undoClickCount, setUndoClickCount] = useState(0);
+  const [groupSize, setGroupSize] = useState(window.innerWidth < 768 ? 25 : 10); 
   const [terzineFrequency, setTerzineFrequency] = useState({});
   const [terzineDelay, setTerzineDelay] = useState({});
 
@@ -65,8 +62,7 @@ const App = () => {
     setClickHistory((prev) => prev.slice(0, -1));
     if(totalInsertedCount>0){
     setTotalInsertedCount(prev => prev - 1);
-    } 
-   setUndoClickCount(prev => prev + 1);
+    }  
   };
 
   const handleClearAllClick = () => {
@@ -77,8 +73,7 @@ const App = () => {
     setClickHistory([]);
     setSestineFrequency({});
     setSestineDelay({});
-    setErrorMessage('');
-    setUndoClickCount(0);
+    setErrorMessage(''); 
     setTotalInsertedCount(0);
     } 
   };
@@ -161,15 +156,14 @@ const App = () => {
   const groupedNumbers = groupNumbers([...clickHistory].reverse());
 
   return (
-    <div className="container-fluid">
-      <div className="header-decoration"></div>
+    <div> 
       <h1 className="text-center title-small">Le sestine di zio Ermanno</h1>
 <h4 className="text-center subtitle-small">♥ ♦ Versione 100 numeri ♣ ♠</h4>
       {errorMessage && <div className="alert alert-warning text-center">{errorMessage}</div>}
 
       <div className="row">
-        <div className="col-12">
-         <CombinedTable
+        
+         <CombinedTable 
   sestineFrequency={sestineFrequency}
   sestineDelay={sestineDelay}
   topSestine={topSestine}
@@ -177,7 +171,7 @@ const App = () => {
   terzineFrequency={terzineFrequency}
   terzineDelay={terzineDelay}
 />
-        </div> 
+        
       </div>
 
       <div className="row">
@@ -211,9 +205,12 @@ const App = () => {
         </div>
      <div className="col-6 d-flex align-items-center">
      <RouletteSurface onNumberClick={handleNumberClick} />
-     <div className="vertical-buttons"style={{ marginLeft: '-40px' }}>
-     <button className="btn btn-danger rotated-button  " onClick={handleUndoClick}>Cancella Ultimo</button>
+     
+     <div className="vertical-buttons"style={{ marginLeft: '-40px' }}> 
+        <button className="btn btn-danger rotated-button  " onClick={handleUndoClick}>Cancella Ultimo</button>
       <button className="btn btn-warning rotated-button " onClick={handleClearAllClick}>Cancella Tutto</button>
+       
+      
       </div>
       </div>
       </div>
