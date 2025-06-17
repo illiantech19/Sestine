@@ -91,17 +91,12 @@ const CombinedTable = ({
 
   return (
     <div className="table-responsive">
+      {/* Spazio extra per iPhone sopra al titolo "le sestine di zio ermanno" */}
+      <div className="iphone-extra-space"></div>
       <table className="table table-bordered table-hover sestine-table">
         <thead className="thead-dark">
-          <tr className="header-row-gray">
-            <th >Sestina</th>
-            {sestine.map(s => <th colSpan={2} key={s.id}>{s.range}</th>)}
-          </tr>
-        </thead>
-        <tbody>
-          {/* RIGA DOZZINE */}
-          <tr>
-            <td>Dozzine</td>
+           <tr>
+            <th>Dozzine</th>
             {(() => {
               const coppie = [[1, 2], [3, 4], [5, 6]];
               const somme = coppie.map(([a, b]) => (sestineFrequency[a] || 0) + (sestineFrequency[b] || 0));
@@ -121,10 +116,18 @@ const CombinedTable = ({
                   else if (val === middle) className = 'bg-warning text-dark fw-bold';
                   else if (val === min) className = 'bg-danger text-white fw-bold';
                 }
-                return <td colSpan={4} key={`${a}-${b}`} className={className} >{val}</td>;
+                return <td colSpan={4} key={`${a}-${b}`} className={className} style={{ fontWeight: 'bold', fontSize: '1.25em' }}>{val}</td>;
               });
             })()}
           </tr>
+          <tr className="header-row-gray">
+            <th >Sestina</th>
+            {sestine.map(s => <th colSpan={2} key={s.id}>{s.range}</th>)}
+          </tr>
+        </thead>
+        <tbody>
+          {/* RIGA DOZZINE */}
+         
 
           {/* RIGA FREQUENZA */}
           <tr>
@@ -144,7 +147,7 @@ const CombinedTable = ({
               const isGreen = greenDelays.includes(s.id);
               const isOrange = delay >= 18 && delay <= 23;
               let className = '';
-              if (isGreen) className = 'bg-success text-white fw-bold';
+              if (isGreen) className = '';
               else if (isOrange) className = 'bg-warning text-dark fw-bold';
               return <td colSpan={2} key={s.id} className={className}>{delay}</td>;
             })}

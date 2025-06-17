@@ -1,67 +1,113 @@
-.sestine-table {
-  width: auto;
-  max-width: 90%;
-  font-size: 1rem;
-  white-space: normal;
-  transform: none;
-  margin: 0 auto;              /* Centra la tabella */
-}
-
-.sestine-table th,
-.sestine-table td {
-  padding: 4px 8px;            /* Più compatta verticalmente */
-}
-
-.table-wrapper {
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
-  padding: 1rem;
-  max-height: 200px;           /* 🔹 Altezza massima verticale */
-  overflow-y: hidden;
-}
-
-.table-responsive {
-  max-width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  max-height: 200px;           /* 🔹 Più stretta in verticale */
-}
-
-
-@media (max-width: 576px) {
-  .sestine-table{
-    width: 30% !important;
-    max-width: 80%;
-    white-space: nowrap; 
-  }
-
-  .sestine-table {
-    font-size: 0.7rem; /* testo ancora più compatto su mobile */
-  }
+@media (max-width: 590px) { 
+ 
+   
    .table-wrapper {
     display: flex;
     justify-content: center;
     padding: 0;        /* rimuovi eventuali padding */
-    margin: 0 auto;    /* centra */ 
+    margin: 0 auto;    /* centra */  
   }
 
   .table-responsive {
+    margin-bottom: 20px;
     max-width: 100%;
     overflow-x: hidden;  
-      max-height:100px;
+      max-height:135px;
       overflow-y: hidden;
   }
   .sestine-table th,
   .sestine-table td {
     padding: 2px 4px;
+    text-align: center; /* Centra il testo orizzontalmente */
+    vertical-align: middle; /* Centra il testo verticalmente */
   }
 
-   .sestine-table {
-    transform: scale(0.6);     /* 🔹 Scala l'intera tabella */
+   .sestine-table { 
+  font-size: 10rem;
+
+  transform: none;
+  margin: 0 auto;              /* Centra la tabella */
+    transform: scale(0.77);     /* Scala la tabella del 2% in più rispetto a prima */
     transform-origin: top left;
-    width: 125%;               /* 🔹 Compensa il ridimensionamento */
-    font-size: 0.75rem;        /* 🔹 Testo più piccolo */
+    width: 125%;               /* Mantieni la larghezza compensativa */
+    font-size: 0.75rem;        /* 🔹npm start Testo più piccolo */
+      white-space: nowrap; 
   }
 }
 
+@media (min-width: 768px) and (max-width:1199px) {
+  
+   .table-wrapper {
+    display: flex;
+    justify-content: flex-end; /* Sposta la tabella più a destra */
+    align-items: center; /* Centra anche verticalmente se serve */
+    margin-left: auto;
+    margin-right: 4vw; /* Aggiunge spazio a destra, regola se serve */
+    padding: 0;        /* rimuovi eventuali padding */ 
+
+  } 
+  .table-responsive { 
+    margin-left: 10%;
+    max-width: 100vw;
+    overflow-x: hidden !important;  /* Forza la rimozione dello scroll orizzontale */
+    max-height:170px;
+    overflow-y: hidden;
+  }
+  .sestine-table th,
+  .sestine-table td {
+    padding: 2px 4px;
+     border: 1px solid rgb(139, 139, 139); 
+     text-align: center; /* Centra il testo orizzontalmente */
+    vertical-align: middle; /* Centra il testo verticalmente */
+  } 
+  .sestine-table { 
+ 
+  font-size: 10rem; 
+  margin: 0 auto;              /* Centra la tabella */
+  transform: scale(0.8);    
+  transform-origin: top left;
+  width: 100%;
+  height: 100%;              /* 🔹 Compensa il ridimensionamento */
+  font-size: 1rem;        /* 🔹npm start Testo più piccolo */
+  white-space: nowrap;
+  }
+} 
+@media (min-width: 1441px){
+  
+   .table-wrapper { 
+   
+    height: 40%;
+    margin-top: 0; /* Elimina spazio extra sopra */
+    padding-top: 0;
+  }
+
+  .table-responsive { 
+    margin-top: 0.35vw; /* Spazio sopra la tabella */
+    margin-bottom: 0.35vw; /* Spazio sotto la tabella, circa 1cm su desktop */
+    height: 5%; 
+    max-width: 100%; /* Più stretta */
+    margin-left: 10%;
+    margin-top:2%;
+    margin-right: auto;
+    overflow-x: hidden;   
+    overflow-y: hidden;
+  }
+  .sestine-table th,
+  .sestine-table td { 
+     border: 5px solid rgb(139, 139, 139); 
+     padding: 12px 18px; /* Più spazio per font grande */
+     text-align: center; /* Centra il testo orizzontalmente */
+    vertical-align: middle; /* Centra il testo verticalmente */
+  }
+
+   .sestine-table { 
+    width: 100%; 
+    transform: scale(0.6); /* Scala la tabella del 40% */
+    height: auto;              
+    font-size: 3.2rem;      /* Font ancora più grande del 15% */
+    white-space: nowrap;
+    margin: 0 auto;
+  }
+}
+
+ 

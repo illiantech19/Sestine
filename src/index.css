@@ -2,5 +2,6 @@
 body {
   background-color: #35654d;
   color: white; /* Imposta il colore del testo per garantire leggibilità */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+   overflow-x: hidden;
 }

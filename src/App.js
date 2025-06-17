@@ -35,13 +35,13 @@ const App = () => {
   const [clickHistory, setClickHistory] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
   const [totalInsertedCount, setTotalInsertedCount] = useState(0);
-  const [groupSize, setGroupSize] = useState(window.innerWidth < 768 ? 25 : 10); 
+  const [groupSize, setGroupSize] = useState(window.innerWidth < 768 ? 20 : 10); 
   const [terzineFrequency, setTerzineFrequency] = useState({});
   const [terzineDelay, setTerzineDelay] = useState({});
 
   useEffect(() => {
     const handleResize = () => {
-      setGroupSize(window.innerWidth < 768 ? 25 : 10);
+      setGroupSize(window.innerWidth < 768 ? 20 : 10);
     };
 
     window.addEventListener('resize', handleResize);
@@ -156,69 +156,70 @@ const App = () => {
   const groupedNumbers = groupNumbers([...clickHistory].reverse());
 
   return (
-    <div> 
-      <h1 className="text-center title-small">Le sestine di zio Ermanno</h1>
-<h4 className="text-center subtitle-small">♥ ♦ Versione 100 numeri ♣ ♠</h4>
+    <>
+      <h1 className="text-center title-small">♥ ♦ Le sestine di zio Ermanno♣ ♠</h1>
       {errorMessage && <div className="alert alert-warning text-center">{errorMessage}</div>}
-
-      <div className="row">
-        
-         <CombinedTable 
-  sestineFrequency={sestineFrequency}
-  sestineDelay={sestineDelay}
-  topSestine={topSestine}
-  secondTopSestine={secondTopSestine}
-  terzineFrequency={terzineFrequency}
-  terzineDelay={terzineDelay}
-/>
-        
+      <div className="row custom-row-table ">
+        <CombinedTable 
+          sestineFrequency={sestineFrequency}
+          sestineDelay={sestineDelay}
+          topSestine={topSestine}
+          secondTopSestine={secondTopSestine}
+          terzineFrequency={terzineFrequency}
+          terzineDelay={terzineDelay}
+        />
       </div>
-
-      <div className="row">
-        <div className="col-6">
-          <div className="click-history mt-4">
-    <h2 style={{ fontSize: "0.8rem" }}>
-  Numeri Estratti{" "} <span className="badge bg-primary" style={{ fontSize: "0.50rem", marginLeft: 10, marginTop:-2}}>
-    {totalInsertedCount}
-  </span>
-</h2>
-            <div className="extracted-numbers-grid">
-              {groupedNumbers.map((group, i) => (
-                <div key={i} className="extracted-column">
-                  {group.map((num, index) => {
-                    const getColorClass = () => {
-                      if (num === 0) return 'green';
-                      const redNumbers = [1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36];
-                      return redNumbers.includes(num) ? 'red' : 'black';
-                    };
-
-                    return (
-                      <div key={index} className={`extracted-number ${getColorClass()}`}>
-                        {num}
-                      </div>
-                    );
-                  })}
-                </div>
-              ))}
+      <div className="ScaledContainer">
+        <div className="row custom-row">
+          <div className="col-history">
+            <div className="click-history">
+              <h2 className="NumeriEstrattiTitolo">
+                Numeri Estratti{" "}
+                <span className="badge bg-primary">{totalInsertedCount}</span>
+              </h2>
+              <div className="extracted-numbers-grid">
+                {groupedNumbers.map((group, i) => (
+                  <div key={i} className="extracted-column">
+                    {group.map((num, index) => {
+                      const getColorClass = () => {
+                        if (num === 0) return 'green';
+                        const redNumbers = [1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36];
+                        return redNumbers.includes(num) ? 'red' : 'black';
+                      };
+                      return (
+                        <div key={index} className={`extracted-number ${getColorClass()}`}>
+                          {num}
+                        </div>
+                      );
+                    })}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="orizzontal-buttons">
+              <button className="btn btn-warning" onClick={handleUndoClick}>Cancella Ultimo</button>
+              <button className="btn btn-danger" onClick={handleClearAllClick}>Cancella Tutto</button> 
             </div>
           </div>
+          <div className="col-roulette">
+            <div className="roulette-container">
+              <RouletteSurface onNumberClick={handleNumberClick} />
+            </div>
+          </div>
+          <div className="col-buttons">
+            <div className="button-container">
+              <div className="vertical-buttons"> 
+                <button className="btn btn-warning rotated-button" onClick={handleUndoClick}>Cancella Ultimo</button>
+                <button className="btn btn-danger rotated-button" onClick={handleClearAllClick}>Cancella Tutto</button>
+              </div>
+            </div> 
+          </div>
         </div>
-     <div className="col-6 d-flex align-items-center">
-     <RouletteSurface onNumberClick={handleNumberClick} style={{ marginTop:-100}}  />
-     
-     <div className="vertical-buttons"style={{ marginLeft: '-40px' }}> 
-        <button className="btn btn-danger rotated-button  " onClick={handleUndoClick}>Cancella Ultimo</button>
-      <button className="btn btn-warning rotated-button " onClick={handleClearAllClick}>Cancella Tutto</button>
-       
-      
       </div>
-      </div>
-      </div>
-    </div>
+    </>
   );
 
 };
 
 export default App;
-
 

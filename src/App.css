@@ -1,63 +1,31 @@
-.click-history {
-  background-color: #f8f9fa; /* sfondo chiaro */
-  border: 2px solid #ccc; /* bordo visibile */
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  margin-bottom: 20px;
-  height: 60%; /* per estendere l'altezza in colonna */
+html, body {
+  touch-action: none;
+  overscroll-behavior: none;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  /* Disabilita lo zoom su dispositivi touch come iPad mini */
 }
 
-.vertical-buttons {
-  display: flex;
-  flex-direction: column;
-    gap: 100px; /* distanza verticale tra bottoni */
-   margin: 0;
-}
-
-.vertical-buttons button {
-  min-width: 100px;
-  text-align: center;
-}
-
-.vertical-buttons .btn-danger {
-  margin-left: 2px;
-   /* Sposta il rosso a sinistra */
-}
-
-.rotated-button {
-    transform: rotate(90deg);
-    transform-origin: center;
-    white-space: nowrap;
-    width: max-content;
-    padding: 1px 1px;
-    font-size: 14px;
-    display: block;
-    margin: 5px;
-}
-
-.extracted-numbers-grid {
-  display: flex; 
-  flex-wrap: wrap;
-  margin-top: 15px;
-}
-
-.extracted-column {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.extracted-number {
-  width: 5%;
-  height: 60px;
-  font-weight: bold;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 1.2rem;
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) 
+  and (orientation: portrait) {
+  html, body {
+    touch-action: none;
+    overscroll-behavior: none;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
 }
 
 .extracted-number.red {
@@ -72,78 +40,414 @@
   background-color: #27ae60;
 }
 
-@media (min-width: 992px) {
- .extracted-numbers-grid {
+ 
+ 
+
+@media (min-width: 768px) and (max-width: 1279px) {
+ .ScaledContainer{
+  transform: scale(0.9); /* Riduce la dimensione della roulette */
+  transform-origin:top; /* Mantiene l'angolo superiore sinistro come punto di riferimento */
+  width: 100%; /* Occupa tutta la larghezza disponibile */
+  height: 100%; /* Occupa tutta l'altezza disponibile */ 
+}
+
+  .custom-row {
+  display: flex; 
+}
+  .custom-row {
+  display: flex; 
+}
+
+ .bg-primary{
+    font-Size: "0.85rem" 
+  }
+.col-history{
+  width:67%
+}
+.col-roulette{
+  width:25%
+}
+.col-buttons .rotated-button { 
+  flex-direction: row;
+    margin: 0 10px;
+    margin-top: -300px;
+  }
+  .vertical-buttons {
+  display: none;
+  flex-direction: column;
+  gap: 100px; /* distanza verticale tra bottoni */
+}
+
+.vertical-buttons button {
+  min-width: 100px;
+  text-align: center;
+}
+ .button-container { 
+  justify-content: center; /* Centra i bottoni orizzontalmente */
+  gap: 10px; /* Spazio tra i bottoni */
+  margin-top: 20px; /* Spazio sopra i bottoni */
+}
+
+.rotated-button { 
+    transform-origin: center;
+    white-space: nowrap;
+    width: max-content; 
+    font-size: 14px;
+    display: block;
+    margin: 5px;
+}
+
+
+.NumeriEstrattiTitolo{
+  font-size: 1.5rem;
+  margin-left: 125px;
+}
+.extracted-number {
+  width: 29px;
+  height  :29px;
+  font-size: 1rem;  
+  font-weight: bold;
+  border-radius: 100%;
   display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
+  justify-content: center;
+  align-items: center;
+  color: white; 
+  margin-top:20px;
+}
+.click-history { 
+  background-color: #f8f9fa; /* sfondo chiaro */
+  border: 2px solid #ccc; /* bordo visibile */
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+  height: 88%; /* per estendere l'altezza in colonna */
   max-width: 100%;
+  margin-left: 60px;
+  margin-top: 40px;
+}
+  .rotated-button {
+    font-size: 20px; 
+  }
+
+  .btn-danger{
+    margin-top:20px;
+    margin-left: 40px;
+    width:150px; 
+    font-size: 1.1rem;
+  }
+    .btn-warning{
+    margin-top: 20px;
+    margin-left: 110px;
+    width:150px; 
+    font-size: 1.1rem;
+  }
+  .vertical-buttons { 
+    max-width : 0px;
+    gap: 80px; /* meno spazio per schermi piccoli */
+  }
+
+  .vertical-buttons button {
+    margin-left:-50px;
+    min-width: 80px;
+    font-size: 1rem;
+  }
+
+  .title-small {
+    font-size: 1.8rem;
+    margin-left: 40px;
+  }
+
+  .subtitles{
+    font-size: 1.2rem;
+    margin-left: 20px;
+  }
+.extracted-numbers-grid {
+  margin-left: 20px;
+  height: 100%;
+  margin-top: 20px;
+  margin-left: 10px;
+  display: flex;  /* affianca le colonne */  
+  gap: 15px;       /* spazio tra colonne */
+}
+
+.extracted-column {
+  display: flex;
+  max-height:80% ;
+  flex-direction: column;
+  gap: 5px;       /* spazio tra numeri verticalmente */
+}
+.subtitle-small {
+  font-size: 0.7rem;
+}
+}
+
+@media (min-width: 1441px) {
+  .ScaledContainer{
+  margin-top: -30%;
+  transform: scale(0.2); /* Riduce la dimensione della roulette */
+  transform-origin:left; /* Mantiene l'angolo superiore sinistro come punto di riferimento */
+  width: 100%; /* Occupa tutta la larghezza disponibile */
+  height: 100%; /* Occupa tutta l'altezza disponibile */ 
+}
+.custom-row-table{  
+  display: flex; 
+}
+  .custom-row {
+  display: flex; 
+}
+  
+.bg-primary{
+    font-Size: "10rem" 
+  }
+.col-history{
+  width:60%
+}
+.col-roulette{
+  width:35%;
+  margin-top: -12vw; /* Sposta la roulette ancora più sopra, subito sotto la sestina */
+}
+.col-buttons .rotated-button { 
+  flex-direction: row;
+    margin: 0 10px;
+    margin-top: -300px;
+  }
+  .vertical-buttons {
+  display: none;
+  flex-direction: column;
+  gap: 100px; /* distanza verticale tra bottoni */
+}
+
+.vertical-buttons button {
+  min-width: 100px;
+  text-align: center;
+}
+ .button-container { 
+  justify-content: center; /* Centra i bottoni orizzontalmente */
+  gap: 10px; /* Spazio tra i bottoni */
+  margin-top: 20px; /* Spazio sopra i bottoni */
+}
+
+.rotated-button { 
+    transform-origin: center;
+    white-space: nowrap;
+    width: max-content; 
+    font-size: 14px;
+    display: block;
+    margin: 5px;
+}
+
+
+.NumeriEstrattiTitolo{
+  font-size: 6rem;
+  margin-left: 35%;
+}
+.extracted-number {
+  width: 100px;
+  height  :100px;
+  font-size: 4rem; 
+  font-weight: bold;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.click-history { 
+  background-color: #f8f9fa; /* sfondo chiaro */
+  border: 2px solid #ccc; /* bordo visibile */
+  border-radius: 10px;
+  padding: 0px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+  height: 80%; /* per estendere l'altezza in colonna */
+  width: 100%;
+  margin-left: 20%; 
+  margin-top: 2%;
+}
+  .rotated-button {
+    font-size: 20px; 
+  }
+
+  .btn-danger{ 
+    margin-top: -5.5%;
+    margin-left: 38%;
+    width:30%; 
+    height: 10%; 
+    font-size: 5rem;
+  }
+    .btn-warning{
+    margin-top: 20px;
+    margin-left: 73%;
+    width:30%; 
+    height: 30%; 
+    font-size: 5rem;
+  }
+  .vertical-buttons { 
+    max-width : 500px; 
+  }
+
+   
+
+  .title-small {
+    font-size: 7rem;
+    margin-left: 40px;
+  }
+
+  .subtitles {
+    font-size: 1.5rem;
+    margin-left: 20px;
+  }
+.extracted-numbers-grid {
+  margin-left: 15%;
+  height: 110%;
+  margin-top: 2%; 
+  display: flex;  /* affianca le colonne */  
+  gap: 5%;       /* spazio tra colonne */
+}
+
+.extracted-column {
+  display: flex;
+  max-height:80% ;
+  flex-direction: column;
+  gap: 15px;       /* spazio tra numeri verticalmente */
+}
+.subtitles {
+  font-size: 0.7rem;
+}
+}
+
+@media (max-width: 575.98px) {
+
+.button-container {  
+  transform: scale(1.1);  
+}
+   .roulette-container{
+    margin-right: 10%;
+     transform: scale(1.08);
+   }
+  .ScaledContainer{  
+  transform: scale(0.85); /* Riduce la dimensione della roulette */
+  transform-origin:top; /* Mantiene l'angolo superiore sinistro come punto di riferimento */
+  width: 100%; /* Occupa tutta la larghezza disponibile */
+  height: 100%; /* Occupa tutta l'altezza disponibile */
+   
+}
+  .orizzontal-buttons {
+  display: none; 
+}
+.custom-row {
+  display: flex; 
+}
+
+.col-history{
+  width:60%
+}
+.col-roulette{
+  width:30%
+}
+.col-buttons{ 
+  width:10%
+}
+  .vertical-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 100px; /* distanza verticale tra bottoni */
+}
+
+.vertical-buttons button {
+  min-width: 100px;
+  text-align: center;
+}
+ 
+
+.rotated-button {
+    transform: rotate(90deg);
+    transform-origin: center;
+    white-space: nowrap;
+    width: max-content; 
+    font-size: 14px;
+    display: block;
+    margin: 5px;
+}
+
+
+.NumeriEstrattiTitolo{
+  font-size: 1rem;
+  margin-left: 20%;
+}
+.extracted-number {
+  width: 21px;
+  height: 21px;
+  font-size: 0.8rem; /* ridotto per smartphone */
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.click-history { 
+  background-color: #f8f9fa; /* sfondo chiaro */
+  border: 2px solid #ccc; /* bordo visibile */
+  border-radius: 10px;
+  padding: 0px;
+  margin-right: 10%;;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+  height: 100%; /* per estendere l'altezza in colonna */
+  min-width: 10%; 
+}
+  .rotated-button {
+    font-size: 12px; 
+  }
+
+  .btn-danger{
+    margin-top:50px;
+    width:130px; 
+  }
+    .btn-warning{
+    
+    margin-top:200px;
+    width:130px; 
+  }
+  .vertical-buttons {
+    max-width : 0px;
+    gap: 80px; /* meno spazio per schermi piccoli */
+  }
+
+  .vertical-buttons button {
+    margin-left:-57px;
+    min-width: 80px;
+    font-size: 1rem;
+  }
+
+  .title-small {
+    font-size: 1.2rem;
+    margin-left: 20px;
+  }
+
+  .subtitle-small {
+    font-size: 0.9rem;
+    margin-left: 20px;
+  }
+.extracted-numbers-grid {
+  margin-left: 4.3%;
+  height: 100%; 
+  display: flex;  /* affianca le colonne */  
+  gap: 12%;       /* spazio tra colonne */
 }
 
 .extracted-column {
   display: flex;
   flex-direction: column;
-  margin-right: 5px;
+  gap: 1%;       /* spazio tra numeri verticalmente */
 }
-
-.extracted-number {
-    width: 28px;
-    height: 28px;
-    font-size: 0.7rem;
-    margin: 2px;
-  }
-
-  .click-history {
-    padding: 5px;
-  }
-}
-
-/* Animazione di apparizione */
-@keyframes pop-in {
-  0% {
-    transform: scale(0.7);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@media (max-width: 991px) {
-
-  .click-history {
-    background-color: #f8f9fa; /* sfondo chiaro */
-    border: 2px solid #ccc; /* bordo visibile */
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
-    height: 500px; /* per estendere l'altezza in colonna */
-    width: 180px;
-  }
-  
-  .extracted-number {
-    width: 12px;
-    height: 12px;
-    font-size: 0.4rem;
-  }
-
-  @media (max-width: 991px) {
-    .extracted-numbers-grid {
-        gap: 20px;
-        height: 100%;
-        margin-left: 10px;
-    }
-}
-
- 
-}
-
-.title-small {
-  font-size: 1.5rem; /* o qualsiasi valore tu voglia */
-}
-
 .subtitle-small {
-  font-size: 1rem;
+  font-size: 0.7rem;
 }
+
+
+}
+
+
+
+
+
+
