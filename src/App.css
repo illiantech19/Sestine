@@ -1,8 +1,7 @@
-html, body {
-  touch-action: none;
+html, body { 
+    touch-action: pan-y;
   overscroll-behavior: none;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  overflow-x: hidden; 
   user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
@@ -17,8 +16,7 @@ html, body {
   html, body {
     touch-action: none;
     overscroll-behavior: none;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-x: hidden; 
     user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
@@ -43,7 +41,30 @@ html, body {
  
  
 
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) and (max-width: 1240px) {
+  .green-table {
+  width: auto;               
+  min-width: 100%; 
+  margin-top: 20%;     
+  margin-left: 20%;      
+  border-collapse: collapse;
+  table-layout: auto;       
+}
+
+.green-table th,
+.green-table td {
+  border: 1px solid rgb(197, 196, 196);
+  padding: 6px 12px;          
+  text-align: center;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.green-table th {
+  background-color: #cacaca;    
+  color: rgb(49, 49, 49);
+  font-weight: normal;
+}
  .ScaledContainer{
   transform: scale(0.9); /* Riduce la dimensione della roulette */
   transform-origin:top; /* Mantiene l'angolo superiore sinistro come punto di riferimento */
@@ -51,22 +72,23 @@ html, body {
   height: 100%; /* Occupa tutta l'altezza disponibile */ 
 }
 
-  .custom-row {
-  display: flex; 
+.col-green-table{
+  width:50% 
 }
-  .custom-row {
-  display: flex; 
+.col-history{
+  width:60%
+}
+.col-roulette{
+  width:50%
+}
+.col-buttons{ 
+  width:10%
 }
 
  .bg-primary{
     font-Size: "0.85rem" 
   }
-.col-history{
-  width:67%
-}
-.col-roulette{
-  width:25%
-}
+ 
 .col-buttons .rotated-button { 
   flex-direction: row;
     margin: 0 10px;
@@ -99,13 +121,13 @@ html, body {
 
 
 .NumeriEstrattiTitolo{
-  font-size: 1.5rem;
-  margin-left: 125px;
+  font-size: 2rem;
+  margin-left: 35%;
 }
 .extracted-number {
-  width: 29px;
-  height  :29px;
-  font-size: 1rem;  
+  width: 40px;
+  height  :40px;
+  font-size: 1.2rem;  
   font-weight: bold;
   border-radius: 100%;
   display: flex;
@@ -120,31 +142,32 @@ html, body {
   border-radius: 10px; 
   box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
   height: 88%; /* per estendere l'altezza in colonna */
-  max-width: 100%;
-  margin-left: 60px;
-  margin-top: 40px;
+  max-width: 100%; 
+  margin-top: 35px;
 }
   .rotated-button {
     font-size: 20px; 
   }
 
-  .btn-danger{
-    margin-top:20px;
-    margin-left: 40px;
-    width:150px; 
-    font-size: 1.1rem;
+  .btn-danger{ 
+    font-size: 1.5rem;
+    margin-top: 10%;
+    margin-left: 20%;
   }
-    .btn-warning{
-    margin-top: 20px;
-    margin-left: 110px;
-    width:150px; 
-    font-size: 1.1rem;
+    .btn-warning{ 
+    font-size: 1.5rem;
+    margin-top: 10%;
+    margin-left: 30%;
   }
   .vertical-buttons { 
     max-width : 0px;
     gap: 80px; /* meno spazio per schermi piccoli */
   }
-
+ 
+  .ipad-button-group {
+    gap: 4rem; /* aumenta lo spazio tra i bottoni su iPad */
+    margin-left: 40%;
+  }
   .vertical-buttons button {
     margin-left:-50px;
     min-width: 80px;
@@ -160,13 +183,13 @@ html, body {
     font-size: 1.2rem;
     margin-left: 20px;
   }
-.extracted-numbers-grid {
-  margin-left: 20px;
-  height: 100%;
-  margin-top: 20px;
-  margin-left: 10px;
+.extracted-numbers-grid { 
+  height: 100%; 
+  margin-left: 25px;
   display: flex;  /* affianca le colonne */  
-  gap: 15px;       /* spazio tra colonne */
+  gap: 40px;       /* spazio tra colonne */
+  min-height:650px; 
+  max-height:650px;  
 }
 
 .extracted-column {
@@ -180,181 +203,57 @@ html, body {
 }
 }
 
-@media (min-width: 1441px) {
-  .ScaledContainer{
-  margin-top: -30%;
-  transform: scale(0.2); /* Riduce la dimensione della roulette */
-  transform-origin:left; /* Mantiene l'angolo superiore sinistro come punto di riferimento */
-  width: 100%; /* Occupa tutta la larghezza disponibile */
-  height: 100%; /* Occupa tutta l'altezza disponibile */ 
-}
-.custom-row-table{  
-  display: flex; 
-}
-  .custom-row {
-  display: flex; 
-}
-  
-.bg-primary{
-    font-Size: "10rem" 
-  }
-.col-history{
-  width:60%
-}
-.col-roulette{
-  width:35%;
-  margin-top: -12vw; /* Sposta la roulette ancora più sopra, subito sotto la sestina */
-}
-.col-buttons .rotated-button { 
-  flex-direction: row;
-    margin: 0 10px;
-    margin-top: -300px;
-  }
-  .vertical-buttons {
-  display: none;
-  flex-direction: column;
-  gap: 100px; /* distanza verticale tra bottoni */
-}
-
-.vertical-buttons button {
-  min-width: 100px;
-  text-align: center;
-}
- .button-container { 
-  justify-content: center; /* Centra i bottoni orizzontalmente */
-  gap: 10px; /* Spazio tra i bottoni */
-  margin-top: 20px; /* Spazio sopra i bottoni */
-}
-
-.rotated-button { 
-    transform-origin: center;
-    white-space: nowrap;
-    width: max-content; 
-    font-size: 14px;
-    display: block;
-    margin: 5px;
-}
-
-
-.NumeriEstrattiTitolo{
-  font-size: 6rem;
-  margin-left: 35%;
-}
-.extracted-number {
-  width: 100px;
-  height  :100px;
-  font-size: 4rem; 
-  font-weight: bold;
-  border-radius: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
-.click-history { 
-  background-color: #f8f9fa; /* sfondo chiaro */
-  border: 2px solid #ccc; /* bordo visibile */
-  border-radius: 10px;
-  padding: 0px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
-  height: 80%; /* per estendere l'altezza in colonna */
-  width: 100%;
-  margin-left: 20%; 
-  margin-top: 2%;
-}
-  .rotated-button {
-    font-size: 20px; 
-  }
-
-  .btn-danger{ 
-    margin-top: -5.5%;
-    margin-left: 38%;
-    width:30%; 
-    height: 10%; 
-    font-size: 5rem;
-  }
-    .btn-warning{
-    margin-top: 20px;
-    margin-left: 73%;
-    width:30%; 
-    height: 30%; 
-    font-size: 5rem;
-  }
-  .vertical-buttons { 
-    max-width : 500px; 
-  }
-
-   
-
-  .title-small {
-    font-size: 7rem;
-    margin-left: 40px;
-  }
-
-  .subtitles {
-    font-size: 1.5rem;
-    margin-left: 20px;
-  }
-.extracted-numbers-grid {
-  margin-left: 15%;
-  height: 110%;
-  margin-top: 2%; 
-  display: flex;  /* affianca le colonne */  
-  gap: 5%;       /* spazio tra colonne */
-}
-
-.extracted-column {
-  display: flex;
-  max-height:80% ;
-  flex-direction: column;
-  gap: 15px;       /* spazio tra numeri verticalmente */
-}
-.subtitles {
-  font-size: 0.7rem;
-}
-}
-
+ 
 @media (max-width: 575.98px) {
-
-.button-container {  
-  transform: scale(1.1);  
+.green-table {
+  width: 100%;      /* meglio full width per adattarsi al contenitore */
+  border-collapse: collapse;
+  table-layout: fixed;  /* importante per celle di larghezza fissa */
 }
-   .roulette-container{
-    margin-right: 10%;
-     transform: scale(1.08);
-   }
+
+.green-table th,
+.green-table td {
+  border: 1px solid rgb(197, 196, 196);
+  padding: 3px 6px;          /* riduci il padding per celle più strette */
+  text-align: center;
+  font-size: 12px;           /* puoi ridurre leggermente la dimensione del font */
+  white-space: nowrap;
+  overflow: hidden;          /* evita che il contenuto allarghi la cella */
+  text-overflow: ellipsis;   /* taglia il testo troppo lungo con ... */
+  max-width: 45px;           /* imposta una larghezza massima */
+  width: 42px;               /* imposta larghezza fissa per le celle */
+}
+
+.green-table th {
+  background-color: #cacaca;
+  color: rgb(49, 49, 49);
+  font-weight: normal;
+}
+.button-container {
+  transform: scale(1.1);
+}
+.roulette-container {
+  margin-right: 10%;
+  transform: scale(1.08);
+}
   .ScaledContainer{  
   transform: scale(0.85); /* Riduce la dimensione della roulette */
   transform-origin:top; /* Mantiene l'angolo superiore sinistro come punto di riferimento */
   width: 100%; /* Occupa tutta la larghezza disponibile */
   height: 100%; /* Occupa tutta l'altezza disponibile */
    
+} 
+.col-green-table{
+  width:50% 
 }
-  .orizzontal-buttons {
-  display: none; 
-}
-.custom-row {
-  display: flex; 
-}
-
 .col-history{
   width:60%
 }
 .col-roulette{
-  width:30%
+  width:50%
 }
 .col-buttons{ 
   width:10%
-}
-  .vertical-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 100px; /* distanza verticale tra bottoni */
-}
-
-.vertical-buttons button {
-  min-width: 100px;
-  text-align: center;
 }
  
 
@@ -371,20 +270,22 @@ html, body {
 
 .NumeriEstrattiTitolo{
   font-size: 1rem;
-  margin-left: 20%;
+  margin-left: 35%;
 }
 .extracted-number {
-  width: 21px;
-  height: 21px;
-  font-size: 0.8rem; /* ridotto per smartphone */
+  width: 23px;
+  height: 23px;
+  font-size: 0.9rem; /* ridotto per smartphone */
   font-weight: bold;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
+  margin-top: 25%;
 }
 .click-history { 
+  margin-top: 10%;
   background-color: #f8f9fa; /* sfondo chiaro */
   border: 2px solid #ccc; /* bordo visibile */
   border-radius: 10px;
@@ -392,20 +293,19 @@ html, body {
   margin-right: 10%;;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
   height: 100%; /* per estendere l'altezza in colonna */
-  min-width: 10%; 
+  min-width: 100%; 
 }
   .rotated-button {
     font-size: 12px; 
   }
 
-  .btn-danger{
-    margin-top:50px;
-    width:130px; 
+  .btn-danger{  
+     margin-top: 15%;
+     margin-left: 10%;
   }
-    .btn-warning{
-    
-    margin-top:200px;
-    width:130px; 
+    .btn-warning{ 
+      margin-top:15%;
+      margin-left: 25%;
   }
   .vertical-buttons {
     max-width : 0px;
@@ -428,15 +328,16 @@ html, body {
     margin-left: 20px;
   }
 .extracted-numbers-grid {
-  margin-left: 4.3%;
+  margin-left: 2%;
   height: 100%; 
+  min-height:300px; 
+  max-height:300px; 
   display: flex;  /* affianca le colonne */  
-  gap: 12%;       /* spazio tra colonne */
+  gap: 5%;       /* spazio tra colonne */  
 }
 
 .extracted-column {
-  display: flex;
-  flex-direction: column;
+   max-height: 100%;  
   gap: 1%;       /* spazio tra numeri verticalmente */
 }
 .subtitle-small {
@@ -446,6 +347,170 @@ html, body {
 
 }
 
+ 
+@media (min-width:1241px) {
+  .green-table {
+  width: auto;               
+  min-width: 100%; 
+  margin-top: 10%;     
+  margin-left: 40%;      
+  border-collapse: collapse;
+  table-layout: auto;       
+}
+
+.green-table th,
+.green-table td {
+  border: 1px solid rgb(197, 196, 196);
+  padding: 6px 12px;          
+  text-align: center;
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+.green-table th {
+  background-color: #cacaca;    
+  color: rgb(49, 49, 49);
+  font-weight: normal;
+}
+ .ScaledContainer{
+  transform: scale(0.6); /* Riduce la dimensione della roulette */
+  transform-origin:top; /* Mantiene l'angolo superiore sinistro come punto di riferimento */
+  width: 100%; /* Occupa tutta la larghezza disponibile */
+  height: 100%; /* Occupa tutta l'altezza disponibile */ 
+}
+
+.col-green-table{
+  width:50% 
+}
+.col-history{
+  width:60%
+}
+.col-roulette{
+  width:50%
+}
+.col-buttons{ 
+  width:10%
+}
+
+ .bg-primary{
+    font-Size: "0.85rem" 
+  }
+ 
+.col-buttons .rotated-button { 
+  flex-direction: row;
+    margin: 0 10px;
+    margin-top: -300px;
+  }
+  .vertical-buttons {
+  display: none;
+  flex-direction: column;
+  gap: 100px; /* distanza verticale tra bottoni */
+}
+
+.vertical-buttons button {
+  min-width: 100px;
+  text-align: center;
+}
+ .button-container { 
+  justify-content: center; /* Centra i bottoni orizzontalmente */
+  gap: 10px; /* Spazio tra i bottoni */
+  margin-top: 20px; /* Spazio sopra i bottoni */
+}
+
+.rotated-button { 
+    transform-origin: center;
+    white-space: nowrap;
+    width: max-content; 
+    font-size: 14px;
+    display: block;
+    margin: 5px;
+}
+
+
+.NumeriEstrattiTitolo{
+  font-size: 2.5rem;
+  margin-left: 40%;
+}
+.extracted-number {
+  width: 40px;
+  height  :40px;
+  font-size: 1.2rem;  
+  font-weight: bold;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white; 
+  margin-top:20px;
+}
+.click-history { 
+  background-color: #f8f9fa; /* sfondo chiaro */
+  border: 2px solid #ccc; /* bordo visibile */
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+  height: 88%; /* per estendere l'altezza in colonna */
+  max-width: 75%; 
+  margin-top: 35px;
+  margin-left: 20%;
+ 
+}
+  .rotated-button {
+    font-size: 30px; 
+  }
+
+  .btn-danger{ 
+    font-size: 2rem;
+    margin-top: 5%;
+    margin-left: 40%;
+  }
+    .btn-warning{ 
+    font-size: 2rem;
+    margin-top: 5%;
+    margin-left: 70%;
+  }
+  .vertical-buttons { 
+    max-width : 0px;
+    gap: 80px; /* meno spazio per schermi piccoli */
+  }
+ 
+  .ipad-button-group {
+    gap: 4rem; /* aumenta lo spazio tra i bottoni su iPad */
+    margin-left: 40%;
+  }
+  .vertical-buttons button {
+    margin-left:-50px;
+    min-width: 80px;
+    font-size: 1rem;
+  }
+
+  .title-small {
+    font-size: 1.8rem;
+    margin-left: 40px;
+  }
+
+  .subtitles{
+    font-size: 1.2rem;
+    margin-left: 20px;
+  }
+.extracted-numbers-grid { 
+  height: 100%; 
+  margin-left: 25px;
+  display: flex;  /* affianca le colonne */  
+  gap: 40px;       /* spazio tra colonne */
+  min-height:650px; 
+  max-height:650px;  
+}
+
+.extracted-column {
+  display: flex;
+  max-height:80% ;
+  flex-direction: column;
+  gap: 5px;       /* spazio tra numeri verticalmente */
+}
+.subtitle-small {
+  font-size: 0.7rem;
+}
+}
 
 
 

@@ -28,13 +28,13 @@
   color: white;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1240px){
   .roulette-surface {   
     display: grid;
     grid-template-columns : repeat(3, 45px);
     width: 100%; 
     margin-top: 40px;
-    margin-left: 40px;
+    margin-left: 30%;
      gap: 10px;
   }
 
@@ -55,7 +55,9 @@
     display: grid;
     grid-template-columns : repeat(3, 45px);
     width: 100%; 
-    margin-left: -20px;  
+    margin-left: 25%;  
+    margin-bottom: 20%;  
+    margin-top: 10%; 
   }
 
   .empty-cell,
@@ -69,19 +71,30 @@
   
 }
 
-@media (min-width: 1441px){
-  .roulette-surface {
+@media (min-width: 1241px){
+.empty-cell,
+   .roulette-number {  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+  margin-top: -40px;
+  width: 4vw;
+    height:4vw;   
+    font-size: large;   
+}
+     
+  .roulette-surface {   
     display: grid;
-    grid-template-columns: repeat(3, 2.8vw);
-    width: max-content;
-    margin-top: -1%;
-    margin-left: 45%;
-    gap: 20px;
-  }
-  .empty-cell,
-  .roulette-number {
-    width: 2.8vw;
-    height: 2.8vw;
-    font-size: 0.9vw;
-  }
+    grid-template-columns : repeat(3, 50px);
+    width: 80%; 
+    margin-top: 10px;
+    margin-left: 60%;
+     gap: 50px;
+     margin-top: 10%;
+  } 
 }
